@@ -221,6 +221,13 @@ a:hover {
   display: block;
 }
 
+.hero-brand-word {
+  background: linear-gradient(135deg, #d63031, #1a1a2e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .kicker {
   font-size: 0.78rem;
   letter-spacing: 0.14em;
