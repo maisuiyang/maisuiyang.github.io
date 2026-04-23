@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PalUp — UX Case Study</title>
+    <meta
+      name="description"
+      content="PalUp is a Seattle-scoped mobile concept for finding compatible dining companions through events, profiles, and chat."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="jump" aria-label="Primary">
+      <div class="shell-wide jump-row">
+        <a class="brand" href="#summary" aria-label="PalUp case study home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="34" height="26" viewBox="0 0 34 26" focusable="false">
+              <!-- three "people" + shared table curve -->
+              <circle cx="8" cy="8" r="3.2" fill="#2f6fed" />
+              <circle cx="17" cy="6.5" r="3.6" fill="#7c3aed" />
+              <circle cx="26" cy="8" r="3.2" fill="#2f6fed" />
+              <path
+                d="M5 19c4.2-2.6 19.8-2.6 24 0"
+                fill="none"
+                stroke="#0f172a"
+                stroke-opacity="0.28"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          <span class="brand-type">PalUp</span>
+        </a>
+
+        <div class="jump-scroll" aria-label="On-page sections">
+          <a href="#about">About</a>
+          <a href="#summary">Overview</a>
+          <a href="#problem">Problem</a>
+          <a href="#research">Research</a>
+          <a href="#process">Process</a>
+          <a href="#iteration">Evolution</a>
+          <a href="#evaluation">Testing</a>
+          <a href="#ui">UI</a>
+          <a href="#solution">Outcome</a>
+          <a href="#challenges">Challenges</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="shell">
+        <p class="kicker">UX case study · HCI course team project</p>
+        <h1>PalUp: Find Compatible Meal Companions in Seattle</h1>
+        <p class="lede">
+          A mobile app concept that helps newcomers in Seattle discover dining events, evaluate group fit, and
+          coordinate plans with less uncertainty.
+        </p>
+        <dl class="meta">
+          <div class="cell">
+            <dt>My Role</dt>
+            <dd>UX/UI designer focused on the Login and Manage Profile experience in Figma</dd>
+          </div>
+          <div class="cell">
+            <dt>Project Type</dt>
+            <dd>Mobile app concept</dd>
+          </div>
+          <div class="cell">
+            <dt>Team</dt>
+            <dd>Karena, Suiyang, Xinran, Zoey</dd>
+          </div>
+          <div class="cell">
+            <dt>Timeline</dt>
+            <dd>Spring 2026</dd>
+          </div>
+          <div class="cell">
+            <dt>Research Methods</dt>
+            <dd>
+              Interviews and screening survey
+              <small>Heuristic evaluation<br />Task-based usability sessions</small>
+            </dd>
+          </div>
+        </dl>
+        <div class="actions">
+          <a class="btn" id="figma-link" href="#">Open Figma prototype</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section id="about" class="band reveal">
+        <h2>About me</h2>
+        <div class="about-grid">
+          <div class="about-card">
+            <p class="about-label">Profile</p>
+            <p class="about-name">Suiyang Mai</p>
+            <p>
+              Computer Science student with an interest in UX/UI design and human-centered product development. In this
+              project, I owned the Login and Manage Profile flow and helped translate research findings into clearer
+              account, profile, and settings interactions.
+            </p>
+          </div>
+          <div class="about-card" id="contact">
+            <p class="about-label">Contact</p>
+            <div class="contact-stack">
+              <div class="contact-line">
+                <span class="contact-line-label">Email</span>
+                <a class="contact-line-value" href="mailto:mai.s@northeastern.edu">mai.s@northeastern.edu</a>
+              </div>
+              <div class="contact-line">
+                <span class="contact-line-label">Location</span>
+                <span class="contact-line-value">Seattle, WA</span>
+              </div>
+              <div class="contact-links">
+                <a
+                  class="contact-linkedin"
+                  href="https://www.linkedin.com/in/suiyangmai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Suiyang Mai on LinkedIn"
+                >
+                  <svg class="contact-linkedin-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path
+                      fill="currentColor"
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"
+                    />
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="summary" class="band reveal">
+        <h2>Product Overview</h2>
+
+        <p>
+          PalUp is a mobile app concept that helps people find company for meals through shared dining events,
+          participant profiles, in-app chat, and filters for cuisine and vibe.
+        </p>
+        <p>
+          The idea came from a simple insight: choosing where to eat is usually easier than choosing who to go with.
+          People care about social fit, comfort, and knowing what they are signing up for, not just food preferences.
+        </p>
+        <div class="thumb-strip" aria-label="Product overview slides">
+          <figure class="thumb-tile thumb-tile--wide-slide">
+            <div class="thumb-frame">
+              <img
+                class="js-zoom"
+                src="../overview-product-flows.png"
+                alt="Product overview: home, event details, create event, and chat"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>Product flows</figcaption>
+          </figure>
+          <figure class="thumb-tile thumb-tile--wide-slide">
+            <div class="thumb-frame">
+              <img
+                class="js-zoom"
+                src="../overview-research-to-design.png"
+                alt="How user research informed specific design choices"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>Research → design</figcaption>
+          </figure>
+          <figure class="thumb-tile">
+            <div class="thumb-frame">
+              <img
+                class="js-zoom"
+                src="../overview-design-change-profile.png"
+                alt="Design changes for login and manage profile"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>Login &amp; profile updates</figcaption>
+          </figure>
+        </div>
+
+        <p class="lead overview-context">
+          For this project, we scoped the prototype to Seattle and focused on helping users discover dining events,
+          understand who is attending, join a group meal, and coordinate plans through chat.
+        </p>
+      </section>
+
+      <section id="problem" class="reveal">
+        <h2>The problem</h2>
+        <div class="rq-stack" role="region" aria-label="Problem framing and research question">
+          <div class="rq-item">
+            <p class="rq-label">Problem</p>
+            <p>Finding dining companions is harder than it should be, so many people still end up eating alone even when they would be open to sharing a meal.</p>
+          </div>
+          <div class="rq-item">
+            <p class="rq-label">Who feels it most</p>
+            <p>
+              People who are new to a city or traveling solo, especially when their local social networks are still forming.
+            </p>
+          </div>
+          <div class="rq-item">
+            <p class="rq-label">Research question</p>
+            <p>
+              What barriers prevent people from finding others to eat with, and what would make dining with strangers feel
+              comfortable? Could shared meals help people build social connections over time?
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="research" class="reveal">
+        <h2>Research</h2>
+        <div class="research-summary">
+          <div class="rs-row">
+            <div class="rs-k">Methods</div>
+            <div class="rs-v">
+              We started with a screening survey, then conducted six semi-structured interviews about dining alone,
+              dining with others, and what would make shared dining feel comfortable.
+            </div>
+          </div>
+          <div class="rs-row">
+            <div class="rs-k">Findings</div>
+            <div class="rs-v">
+              Participants often brought up trust with strangers, scheduling, and whether conversation would feel
+              natural. Some also said they eat alone for practical reasons, not necessarily because they feel lonely.
+            </div>
+          </div>
+          <div class="rs-row">
+            <div class="rs-k">Takeaway</div>
+            <div class="rs-v">
+              Most participants were open to dining with others, but the main barriers were coordination and uncertainty
+              about who they would meet. Smaller groups, clearer event details, and more transparent participant
+              information made people more willing to join.
+            </div>
+          </div>
+        </div>
+
+        <h3>Artifacts</h3>
+        <div class="research-layout">
+          <figure class="media research-card research-main">
+            <p class="media-title">Affinity diagram</p>
+            <div class="research-frame">
+              <img
+                class="js-zoom"
+                src="../affinity-diagram.png"
+                alt="Affinity diagram summarizing interview themes"
+                loading="lazy"
+              />
+            </div>
+            <figcaption class="caption">Affinity diagram from interview synthesis.</figcaption>
+          </figure>
+          <figure class="media research-card research-side">
+            <p class="media-title">Persona</p>
+            <div class="research-frame">
+              <img class="js-zoom" src="../persona.png" alt="Persona from design research synthesis" loading="lazy" />
+            </div>
+            <figcaption class="caption">Persona: needs, context, and goals.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="process" class="band reveal">
+        <h2>Process</h2>
+        <p class="lead">Research → Sketch → Paper Prototype → Evaluation → High-Fidelity Figma</p>
+
+        <div class="process-rail" aria-label="UX process">
+          <div class="step" style="--step-a: #2f6fed; --step-b: #5aa2ff">
+            <div class="step-k">01</div>
+            <strong>Research</strong>
+            <span>Interviews, survey, user needs, and pain points.</span>
+          </div>
+          <div class="step" style="--step-a: #7c3aed; --step-b: #a78bfa">
+            <div class="step-k">02</div>
+            <strong>Sketch</strong>
+            <span>Fast low-fidelity alternatives for key flows.</span>
+          </div>
+          <div class="step" style="--step-a: #0ea5e9; --step-b: #38bdf8">
+            <div class="step-k">03</div>
+            <strong>Prototype</strong>
+            <span>Paper iterations to test task structure.</span>
+          </div>
+          <div class="step" style="--step-a: #f97316; --step-b: #fb923c">
+            <div class="step-k">04</div>
+            <strong>Evaluate</strong>
+            <span>Heuristic review and usability checks.</span>
+          </div>
+          <div class="step" style="--step-a: #111827; --step-b: #334155">
+            <div class="step-k">05</div>
+            <strong>High-Fi</strong>
+            <span>Refined Figma prototype with clearer feedback and navigation.</span>
+          </div>
+        </div>
+
+        <h3>Paper Prototype Journey</h3>
+        <p>
+          As a team, we used a paper wall to sketch several user flows side by side. This helped us compare interaction
+          ideas, spot missing steps, and narrow the scope before moving into Figma.
+        </p>
+        <figure class="media">
+          <p class="media-title">Team paper prototype wall</p>
+          <img
+            class="js-zoom"
+            src="../process-team-paper-wall-hd.jpg"
+            data-full-src="../process-team-paper-wall-hd.jpg"
+            alt="PalUp paper prototype wall: six panels for post event, join event, details, chat, login and profile, settings"
+            width="3600"
+            height="2696"
+            loading="lazy"
+          />
+          <figcaption class="caption">Team paper prototype wall.</figcaption>
+        </figure>
+      </section>
+
+      <section id="iteration" class="reveal">
+        <h2>Prototype Evolution</h2>
+        <p>
+          The Login and Manage Profile flow evolved from a paper prototype into two Figma iterations. The early version
+          focused on structure and task flow, while the later version refined feedback, account settings, profile
+          preview, and visual consistency.
+        </p>
+        <div class="triptych evolution-triptych">
+          <div class="tile evolution-card">
+            <p class="img-title">Original</p>
+            <div class="evolution-frame">
+              <img
+                class="js-zoom"
+                src="../process-paper.png"
+                alt="Early paper prototype"
+                loading="lazy"
+              />
+            </div>
+            <div class="cap">Early paper layout for login and profile.</div>
+          </div>
+          <div class="tile evolution-card">
+            <p class="img-title">Iteration 1</p>
+            <div class="evolution-frame">
+              <img
+                class="js-zoom"
+                src="../iteration-1-digital.png"
+                alt="Iteration 1 digital prototype"
+                loading="lazy"
+              />
+            </div>
+            <div class="cap">Iteration 1: structure and main interactions.</div>
+          </div>
+          <div class="tile evolution-card">
+            <p class="img-title">Iteration 2</p>
+            <div class="evolution-frame">
+              <img
+                class="js-zoom"
+                src="../iteration-2-digital.png"
+                alt="Iteration 2 digital prototype"
+                loading="lazy"
+              />
+            </div>
+            <div class="cap">Iteration 2: visuals, spacing, and feedback states.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="evaluation" class="band reveal">
+        <h2>Testing</h2>
+        <p><strong>Method:</strong> Heuristic review and task-based usability sessions</p>
+        <p><strong>Participants:</strong> 8 people</p>
+        <p>
+          After testing, we refined the prototype to make key actions and next steps easier to understand. We improved
+          confirmation feedback after sensitive actions, made settings and help easier to access, and adjusted event and
+          chat screens for better readability, layout, imagery, and color.
+        </p>
+        <p>
+          For my Login and Manage Profile flow, I focused on sign-in, profile preview, account settings, error states,
+          save feedback, and confirmation patterns.
+        </p>
+      </section>
+
+      <section id="ui" class="reveal">
+        <h2>UI</h2>
+        <p class="lead">Team high-fidelity canvas built in Figma, showing the final PalUp mobile prototype across event discovery, event management, chat, profile, and account settings flows.</p>
+        <p>
+          <a
+            class="public-figma-link"
+            href="https://www.figma.com/design/GHEjNtXC88rwqjANMyj82r/PulUP?node-id=0-1&p=f&t=7bgTz81E5cbIOrc5-0"
+            target="_blank"
+            rel="noopener noreferrer"
+            >View Figma file</a>
+        </p>
+        <figure class="media canvas-preview">
+          <p class="media-title">Full UI canvas</p>
+          <div class="canvas-frame">
+            <div class="canvas-scroll">
+              <img
+                class="js-zoom"
+                src="../PalUp%20%281%29.png"
+                alt="Full PalUp high-fidelity canvas export"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <figcaption class="caption">Full-team Figma canvas export.</figcaption>
+        </figure>
+
+        <h3>Key screens</h3>
+        <p>Sign up → login → profile → edit profile → login &amp; security → preview.</p>
+        <div class="key-row">
+          <figure class="key">
+            <div class="key-frame">
+              <img src="../PalUp/signup.png" alt="Sign up" loading="lazy" />
+            </div>
+          </figure>
+          <figure class="key">
+            <div class="key-frame">
+              <img src="../PalUp/login.png" alt="Login" loading="lazy" />
+            </div>
+          </figure>
+          <figure class="key">
+            <div class="key-frame">
+              <img src="../PalUp/Profile.png" alt="Profile home" loading="lazy" />
+            </div>
+          </figure>
+          <figure class="key">
+            <div class="key-frame">
+              <img src="../PalUp/Edit%20Profile.png" alt="Edit profile" loading="lazy" />
+            </div>
+          </figure>
+          <figure class="key">
+            <div class="key-frame">
+              <img src="../PalUp/login-security.png" alt="Login and security" loading="lazy" />
+            </div>
+          </figure>
+          <figure class="key">
+            <div class="key-frame">
+              <img src="../PalUp/profile-preview.png" alt="Preview profile" loading="lazy" />
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section id="solution" class="band reveal">
+        <h2>Outcome</h2>
+        <p>
+          The final outcome is an interactive Figma prototype for PalUp, a dining companion app that helps people
+          discover dining events in Seattle, see who is attending, join group meals, and coordinate logistics through
+          chat.
+        </p>
+        <p>
+          The prototype also includes profile and account flows that support trust and personalization, such as profile
+          previews, clearer confirmation feedback, settings management, and Help &amp; Support access.
+        </p>
+
+        <h3>Final Frame</h3>
+        <p>
+          A combined view of the final Login and Manage Profile flow, including sign-in, profile overview, profile
+          preview, edit profile, account settings, and related confirmation screens.
+        </p>
+        <figure class="media">
+          <p class="media-title">Final frame</p>
+          <img
+            class="js-zoom"
+            src="../Frame%201.png"
+            alt="Composite Figma export of sign-in, profile, and account settings flows"
+            loading="lazy"
+          />
+          <figcaption class="caption">Composite export: account access, profile, and related settings.</figcaption>
+        </figure>
+      </section>
+
+      <section id="challenges" class="reveal">
+        <h2>Challenges &amp; Learnings</h2>
+        <h3>Challenges</h3>
+        <ul>
+          <li>
+            <strong>Onboarding balance:</strong> Collecting enough profile information for matching and trust while keeping
+            setup quick.
+          </li>
+          <li>
+            <strong>Trust before commitment:</strong> Helping users understand who they might meet before joining an
+            event.
+          </li>
+          <li>
+            <strong>Information clarity:</strong> Presenting event, chat, and profile details without overwhelming the
+            screen.
+          </li>
+          <li>
+            <strong>Cross-feature consistency:</strong> Making event, chat, and profile flows feel like one connected
+            product.
+          </li>
+          <li>
+            <strong>Iteration under constraints:</strong> Prioritizing fixes that improved task completion, feedback, and
+            next-step clarity within limited testing cycles.
+          </li>
+        </ul>
+        <h3>Learnings</h3>
+        <p>
+          This project showed me that UX is more than visual polish. It requires understanding users, testing
+          assumptions, and improving decisions with evidence from heuristic evaluation and usability testing.
+        </p>
+        <p>
+          As a CS student, I learned that a feature can work on paper but still fail users if the flow is confusing.
+          Usability knowledge helps me collaborate better with design and product teams and catch interaction issues
+          earlier.
+        </p>
+      </section>
+
+      <footer class="reveal">© <span id="y"></span> PalUp case study</footer>
+    </main>
+
+    <div class="lightbox" id="img-lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close image preview">×</button>
+      <div class="lightbox-tools">
+        <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+        <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+        <a id="lightbox-open" target="_blank" rel="noopener noreferrer">Open original</a>
+      </div>
+      <div class="lightbox-stage" id="lightbox-stage">
+        <div class="lightbox-canvas" id="lightbox-canvas">
+          <img id="lightbox-img" alt="Expanded image" draggable="false" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+
+      const figma = document.getElementById("figma-link");
+      const FIGMA_PROTO_URL =
+        "https://www.figma.com/proto/GHEjNtXC88rwqjANMyj82r/PalUp?node-id=628-2444&t=9MffpE68rPn1Mh8";
+      figma.href = FIGMA_PROTO_URL;
+      figma.target = "_blank";
+      figma.rel = "noopener noreferrer";
+
+      // Scroll-triggered fade / lift for main sections (skipped when reduced motion)
+      (function initScrollReveal() {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        document.documentElement.classList.add("use-motion");
+        const nodes = document.querySelectorAll(".reveal");
+        const revealIo = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("is-revealed");
+                revealIo.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.08, rootMargin: "0px 0px -8% 0px" }
+        );
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+        nodes.forEach((el) => {
+          const top = el.getBoundingClientRect().top;
+          if (top < vh * 0.92) el.classList.add("is-revealed");
+          else revealIo.observe(el);
+        });
+      })();
+
+      // Nav highlight (scroll spy)
+      const navLinks = Array.from(document.querySelectorAll(".jump-scroll a"));
+      const sections = navLinks
+        .map((a) => document.querySelector(a.getAttribute("href")))
+        .filter((el) => el && el instanceof HTMLElement);
+
+      function setActive(hash) {
+        navLinks.forEach((a) => a.classList.toggle("is-active", a.getAttribute("href") === hash));
+      }
+
+      function scrollToSectionWithOffset(hash) {
+        const target = document.querySelector(hash);
+        if (!(target instanceof HTMLElement)) return;
+        const top = target.getBoundingClientRect().top + window.scrollY - 60;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+
+      navLinks.forEach((a) => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          const hash = a.getAttribute("href");
+          setActive(hash);
+          scrollToSectionWithOffset(hash);
+          history.replaceState(null, "", hash);
+        });
+      });
+
+      // Scroll spy: use document scroll position (stable for short sections; IO + tight rootMargin missed some)
+      const NAV_SCROLL_OFFSET = 88;
+      let scrollSpyRaf = 0;
+      function syncNavScrollSpy() {
+        const y = window.scrollY + NAV_SCROLL_OFFSET;
+        let current = null;
+        for (let i = 0; i < sections.length; i++) {
+          const s = sections[i];
+          const top = s.getBoundingClientRect().top + window.scrollY;
+          if (top <= y) current = s;
+        }
+        if (!current) setActive("#summary");
+        else setActive("#" + current.id);
+      }
+      function requestScrollSpy() {
+        if (scrollSpyRaf) return;
+        scrollSpyRaf = requestAnimationFrame(() => {
+          scrollSpyRaf = 0;
+          syncNavScrollSpy();
+        });
+      }
+      window.addEventListener("scroll", requestScrollSpy, { passive: true });
+      window.addEventListener("resize", syncNavScrollSpy);
+      syncNavScrollSpy();
+
+      // Image lightbox: magnifier cursor, click image to zoom, drag to pan, wheel zooms while open
+      const lightbox = document.getElementById("img-lightbox");
+      const lightboxStage = document.getElementById("lightbox-stage");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxClose = document.getElementById("lightbox-close");
+      const zoomInBtn = document.getElementById("zoom-in");
+      const zoomOutBtn = document.getElementById("zoom-out");
+      const openOriginal = document.getElementById("lightbox-open");
+      let zoomScale = 1;
+      let fitWidthPx = 0;
+      const PAN_THRESHOLD = 7;
+      /** @type {{ pointerId: number; startX: number; startY: number; lastX: number; lastY: number; dragging: boolean; startTarget: EventTarget | null } | null} */
+      let panSession = null;
+
+      const ZOOM_MAX = 10;
+
+      function syncLightboxCursorFlags() {
+        if (!lightboxStage) return;
+        const zoomed = zoomScale > 1.04;
+        lightboxStage.classList.toggle("lb-zoomed", zoomed);
+        lightboxStage.classList.toggle("lb-max-zoom", zoomScale >= ZOOM_MAX - 0.001);
+        const sw = lightboxStage.scrollWidth;
+        const sh = lightboxStage.scrollHeight;
+        const cw = lightboxStage.clientWidth;
+        const ch = lightboxStage.clientHeight;
+        const pannable = sw > cw + 2 || sh > ch + 2;
+        lightboxStage.classList.toggle("lb-pannable", pannable);
+      }
+
+      function closeLightbox() {
+        panSession = null;
+        if (lightboxStage) {
+          lightboxStage.classList.remove("is-panning", "lb-zoomed", "lb-pannable", "lb-max-zoom");
+        }
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImg.removeAttribute("src");
+        lightboxImg.onload = null;
+        lightboxImg.style.width = "";
+        lightboxImg.style.height = "";
+        lightboxImg.style.maxWidth = "";
+        lightboxImg.style.maxHeight = "";
+        zoomScale = 1;
+        fitWidthPx = 0;
+        if (lightboxStage) lightboxStage.scrollTop = 0;
+        if (lightboxStage) lightboxStage.scrollLeft = 0;
+        document.body.style.overflow = "";
+      }
+
+      function layoutLightboxImage() {
+        if (!lightboxStage) return;
+        const nw = lightboxImg.naturalWidth;
+        const nh = lightboxImg.naturalHeight;
+        if (!nw || !nh) return;
+        const pad = 32;
+        const maxW = Math.max(120, lightboxStage.clientWidth - pad);
+        const maxH = Math.max(120, lightboxStage.clientHeight - pad);
+        const contain = Math.min(1, maxW / nw, maxH / nh);
+        fitWidthPx = nw * contain;
+        const w = Math.max(80, fitWidthPx * zoomScale);
+        lightboxImg.style.width = w + "px";
+        lightboxImg.style.height = "auto";
+        lightboxImg.style.maxWidth = "none";
+        lightboxImg.style.maxHeight = "none";
+        requestAnimationFrame(syncLightboxCursorFlags);
+      }
+
+      function openLightboxFromImage(img) {
+        if (!img) return;
+        zoomScale = 1;
+        const full = img.getAttribute("data-full-src");
+        const url = (full && full.trim()) || img.currentSrc || img.src;
+        lightboxImg.onload = function () {
+          layoutLightboxImage();
+        };
+        lightboxImg.src = url;
+        openOriginal.href = url;
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        if (lightboxImg.complete && lightboxImg.naturalWidth) {
+          layoutLightboxImage();
+        }
+      }
+
+      function updateZoom(next) {
+        if (!lightboxStage) return;
+        let ratioX = 0.5;
+        let ratioY = 0.5;
+        const sw = lightboxStage.scrollWidth;
+        const sh = lightboxStage.scrollHeight;
+        if (sw > 0 && sh > 0) {
+          ratioX = (lightboxStage.scrollLeft + lightboxStage.clientWidth / 2) / sw;
+          ratioY = (lightboxStage.scrollTop + lightboxStage.clientHeight / 2) / sh;
+        }
+        zoomScale = Math.max(0.35, Math.min(ZOOM_MAX, next));
+        layoutLightboxImage();
+        requestAnimationFrame(() => {
+          const nsw = lightboxStage.scrollWidth || 1;
+          const nsh = lightboxStage.scrollHeight || 1;
+          const maxSl = Math.max(0, nsw - lightboxStage.clientWidth);
+          const maxSt = Math.max(0, nsh - lightboxStage.clientHeight);
+          lightboxStage.scrollLeft = Math.min(maxSl, Math.max(0, ratioX * nsw - lightboxStage.clientWidth / 2));
+          lightboxStage.scrollTop = Math.min(maxSt, Math.max(0, ratioY * nsh - lightboxStage.clientHeight / 2));
+          syncLightboxCursorFlags();
+        });
+      }
+
+      function stopToolBubble(e) {
+        e.stopPropagation();
+      }
+
+      zoomInBtn.addEventListener("click", (e) => {
+        stopToolBubble(e);
+        updateZoom(zoomScale * 1.2);
+      });
+      zoomOutBtn.addEventListener("click", (e) => {
+        stopToolBubble(e);
+        updateZoom(zoomScale / 1.2);
+      });
+      openOriginal.addEventListener("click", stopToolBubble);
+
+      lightboxStage.addEventListener(
+        "wheel",
+        (e) => {
+          if (!lightbox.classList.contains("open")) return;
+          e.preventDefault();
+          const factor = e.deltaY < 0 ? 1.1 : 1 / 1.1;
+          updateZoom(zoomScale * factor);
+        },
+        { passive: false }
+      );
+
+      lightboxStage.addEventListener("pointerdown", (e) => {
+        if (!lightbox.classList.contains("open")) return;
+        if (e.pointerType !== "mouse") return;
+        if (e.button !== 0) return;
+        panSession = {
+          pointerId: e.pointerId,
+          startX: e.clientX,
+          startY: e.clientY,
+          lastX: e.clientX,
+          lastY: e.clientY,
+          dragging: false,
+          startTarget: e.target,
+        };
+        // Do not setPointerCapture here: while capture is on the stage, pointerup's target is
+        // often the stage, so tap-to-zoom on the image never sees e.target === lightboxImg.
+      });
+
+      lightboxStage.addEventListener("pointermove", (e) => {
+        if (!panSession || panSession.pointerId !== e.pointerId) return;
+        const dxFromStart = e.clientX - panSession.startX;
+        const dyFromStart = e.clientY - panSession.startY;
+        if (!panSession.dragging) {
+          if (Math.hypot(dxFromStart, dyFromStart) < PAN_THRESHOLD) return;
+          panSession.dragging = true;
+          lightboxStage.classList.add("is-panning");
+          panSession.lastX = e.clientX;
+          panSession.lastY = e.clientY;
+          try {
+            lightboxStage.setPointerCapture(e.pointerId);
+          } catch (_) {}
+          return;
+        }
+        const dx = e.clientX - panSession.lastX;
+        const dy = e.clientY - panSession.lastY;
+        panSession.lastX = e.clientX;
+        panSession.lastY = e.clientY;
+        lightboxStage.scrollLeft -= dx;
+        lightboxStage.scrollTop -= dy;
+      });
+
+      function endPanSession(e) {
+        if (!panSession || panSession.pointerId !== e.pointerId) return;
+        panSession = null;
+        lightboxStage.classList.remove("is-panning");
+        syncLightboxCursorFlags();
+        try {
+          if (e.pointerId != null) lightboxStage.releasePointerCapture(e.pointerId);
+        } catch (_) {}
+      }
+
+      lightboxStage.addEventListener("pointerup", endPanSession);
+      lightboxStage.addEventListener("pointercancel", endPanSession);
+
+      // Click-to-zoom on the image only (reliable repeat zoom; avoids pointerup + capture quirks)
+      lightboxImg.addEventListener("click", (e) => {
+        if (!lightbox.classList.contains("open")) return;
+        e.stopPropagation();
+        updateZoom(zoomScale * 1.22);
+      });
+
+      window.addEventListener("resize", () => {
+        if (lightbox.classList.contains("open") && lightboxImg.naturalWidth) {
+          layoutLightboxImage();
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        const target = e.target.closest("img.js-zoom");
+        if (!target) return;
+        e.preventDefault();
+        openLightboxFromImage(target);
+      });
+
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
+      });
+    </script>
+  </body>
+</html>
